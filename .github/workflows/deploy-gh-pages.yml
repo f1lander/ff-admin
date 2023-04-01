@@ -1,0 +1,34 @@
+# This is a basic workflow to deploy a static site to GitHub Pages
+name: Deploy to GitHub Pages 🚀
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build & export 🛫
+        run: yarn build
+
+      - name: no jekyll
+        run: touch ./out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
