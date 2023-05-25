@@ -22,7 +22,7 @@ jobs:
         run: yarn install
 
       - name: Build & export 🛫
-        run: yarn build
+        run: NODE_ENV=production yarn build
 
       - name: no jekyll
         run: touch ./out/.nojekyll
@@ -30,5 +30,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          branch: gh-pages
           folder: out
       
