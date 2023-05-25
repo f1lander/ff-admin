@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
-import thirteen from "../public/thirteen.svg";
-import next from "../public/next.svg";
-import vercel from "../public/vercel.svg";
+import thirteen from "../../public/thirteen.svg";
+import next from "../../public/next.svg";
+import vercel from "../../public/vercel.svg";
 
 const inter = Inter({ subsets: ["latin"] });
 
