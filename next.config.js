@@ -4,7 +4,8 @@ const nextConfig = {
     appDir: true,
   },
   output: 'export',
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://f1lander.github.io/ff-admin/' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/ff-admin' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/ff-admin' : '',
 }
 
 module.exports = nextConfig
